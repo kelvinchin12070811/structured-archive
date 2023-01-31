@@ -7,14 +7,16 @@ project(structured-archive)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/out/build")
 
 set (SOURCE_FILES
-"structured-archive.cpp"
+ "structured-archive.cpp"
+ "Test.cpp"
 )
 
 set (HEADER_FILES
-"structured-archive.hpp"
+ "structured-archive.hpp"
+ "Test.hpp"
 )
 
-add_executable (${PROJECT_NAME} ${SOURCE_FILES} ${HEADER_FILES})
+add_library (${PROJECT_NAME} SHARED ${SOURCE_FILES} ${HEADER_FILES})
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
